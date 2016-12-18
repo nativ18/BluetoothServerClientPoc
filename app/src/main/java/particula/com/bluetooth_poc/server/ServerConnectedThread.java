@@ -41,11 +41,12 @@ class ServerConnectedThread extends Thread {
         // Keep listening to the InputStream until an exception occurs
         while (true) {
             try {
-                // Read from the InputStream
-//                bytes = mmInStream.read(buffer);
+                bytes = mmInStream.read(buffer);
                 // Send the obtained bytes to the UI activity
 //                mHandler.obtainMessage(MESSAGE_READ, bytes, -1, buffer)
 //                        .sendToTarget();
+                Log.d("ServerThread", "Server got: " + String.valueOf(buffer) + " msg from client");
+
 
                 //write a message to client
                 String hello = System.currentTimeMillis() + ": Hello Client!";
